@@ -1,0 +1,65 @@
+HOW TO RUN THE PIPELINE WITH REAL DATA ONLY (no synthetic)
+============================================================
+
+The pipeline is driven entirely by trios.tsv and phenotypes.tsv — synthetic
+files that aren't listed there are never loaded. So switching to real-only
+data is straightforward:
+
+
+STEP 1 — Copy all real files into data/
+----------------------------------------
+cp input/CHYPXX_proband.csv data/
+cp input/CHYPXX_father.csv  data/
+cp input/CHYPXX_mother.csv  data/
+# repeat for every trio
+
+
+STEP 2 — Replace data/trios.tsv with only real entries
+-------------------------------------------------------
+printf "trio_id\tproband\tfather\tmother\tphenotype_group\n" > data/trios.tsv
+echo -e "TREAL01\tCHYP01_proband\tCHYP01_father\tCHYP01_mother\thearing_loss" >> data/trios.tsv
+echo -e "TREAL02\tCHYP02_proband\tCHYP02_father\tCHYP02_mother\thearing_loss" >> data/trios.tsv
+# one line per real trio
+
+
+STEP 3 — Build data/phenotypes.tsv from eVAI metadata
+------------------------------------------------------
+Each real file's HPO terms live in the "##Phenotypes:" header line.
+Extract them and write the TSV manually (or script it):
+
+printf "sample_id\thpo_terms\taffected\tage_of_onset_years\tsex\tnotes\n" > data/phenotypes.tsv
+
+# For each sample — extract HPO from ##Phenotypes line:
+grep "^\"##Phenotypes" input/CHYP01_proband.csv
+# then append rows matching the schema, e.g.:
+# CHYP01_proband    HP:0000407;HP:0008619   1   5   F   bilateral SNHL
+# CHYP01_father                             0       M   unaffected
+# CHYP01_mother                             0       F   unaffected
+
+
+STEP 4 — Check cv_folds vs number of real trios
+------------------------------------------------
+Open src/model.py and look at DEFAULT_CONFIG:
+    "cv_folds": 5,
+
+GroupKFold needs at least cv_folds trios. If you have fewer, lower this value:
+    "cv_folds": 3,   # if you have 3–4 real trios
+
+
+STEP 5 — Re-run notebooks 01→05 in order
+-----------------------------------------
+No other code changes needed:
+    1. notebooks/01_eda.ipynb
+    2. notebooks/02_trio_assembly.ipynb
+    3. notebooks/03_feature_engineering.ipynb
+    4. notebooks/04_modelling.ipynb
+    5. notebooks/05_evaluation.ipynb
+
+
+CAVEAT — small cohort hold-out split
+--------------------------------------
+With few trios the hold-out split (last 20% by lexicographic trio_id) may
+leave only 1 trio for testing. If that's too small, change the split threshold
+in notebooks/04_modelling.ipynb and notebooks/05_evaluation.ipynb from 0.8
+to e.g. 0.7, or use leave-one-out cross-validation by setting cv_folds equal
+to the total number of trios.

@@ -1,0 +1,48 @@
+# ─── Patient / clinical data (NEVER commit) ──────────────────────────────────
+input/**
+!input/.gitkeep
+
+# ─── Generated data files (reproducible; re-run generate_synthetic.py) ───────
+data/*.csv
+data/*.parquet
+# Keep the manifest TSVs as reference examples (synthetic IDs only)
+!data/trios.tsv
+!data/phenotypes.tsv
+
+# ─── Trained model artefacts (reproducible; re-run notebooks/04) ─────────────
+models/*.joblib
+models/*.pkl
+
+# ─── MLflow experiment tracking (local, machine-specific) ────────────────────
+mlruns/
+mlflow.db
+
+# ─── Generated reports (reproducible; re-run notebook 05) ───────────────────
+reports/*.png
+reports/*.csv
+
+# ─── Old/legacy files from project root ──────────────────────────────────────
+synthetic_*.csv
+*.joblib
+model_results.csv
+input_eda.ipynb
+synthetic_classification.ipynb
+desktop.ini
+
+# ─── Python cache ────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# ─── Virtual environments ─────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+
+# ─── Jupyter runtime ─────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ─── OS artefacts ─────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db

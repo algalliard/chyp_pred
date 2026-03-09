@@ -1,0 +1,49 @@
+sample_id	hpo_terms	affected	age_of_onset_years	sex	notes
+SYNTH01_proband	HP:0000365;HP:0000407	1	10.5	F	early-onset sensorineural hearing loss
+SYNTH01_father		0		M	unaffected, obligate carrier suspected
+SYNTH01_mother	HP:0008619	0		F	normal hearing, no reported symptoms
+SYNTH02_proband	HP:0000407;HP:0000365	1	14.2	F	early-onset sensorineural hearing loss
+SYNTH02_father	HP:0000407	0		M	normal hearing, no reported symptoms
+SYNTH02_mother		0		F	normal hearing, no reported symptoms
+SYNTH03_proband	HP:0000407;HP:0008619	1	9.2	M	moderate-severe bilateral SNHL
+SYNTH03_father	HP:0000370;HP:0000407	1	37.0	M	hearing aid user
+SYNTH03_mother		0		F	clinically unaffected
+SYNTH04_proband	HP:0000407;HP:0008619;HP:0000411	1	15.4	M	congenital bilateral SNHL
+SYNTH04_father	HP:0000370	1	38.5	M	mild unilateral hearing loss
+SYNTH04_mother		0		F	clinically unaffected
+SYNTH05_proband	HP:0008619;HP:0000365;HP:0001751	1	11.7	F	profound bilateral hearing loss, cochlear implant candidate
+SYNTH05_father	HP:0008619	0		M	normal hearing, no reported symptoms
+SYNTH05_mother	HP:0000405	0		F	clinically unaffected
+SYNTH06_proband	HP:0008619;HP:0000407;HP:0000358	1	10.9	M	early-onset sensorineural hearing loss
+SYNTH06_father		0		M	clinically unaffected
+SYNTH06_mother	HP:0000377	0		F	normal hearing, no reported symptoms
+SYNTH07_proband	HP:0000365;HP:0008619;HP:0000405	1	15.4	F	early-onset sensorineural hearing loss
+SYNTH07_father	HP:0000358	0		M	unaffected
+SYNTH07_mother		0		F	clinically unaffected
+SYNTH08_proband	HP:0008619;HP:0000407	1	7.2	F	congenital bilateral SNHL
+SYNTH08_father		0		M	normal hearing, no reported symptoms
+SYNTH08_mother		0		F	clinically unaffected
+SYNTH09_proband	HP:0000365;HP:0000407;HP:0000377	1	19.0	F	bilateral hearing loss, unknown onset
+SYNTH09_father		0		M	unaffected, obligate carrier suspected
+SYNTH09_mother	HP:0000358	0		F	unaffected
+SYNTH10_proband	HP:0000365;HP:0008619	1	5.9	F	moderate-severe bilateral SNHL
+SYNTH10_father	HP:0000370	0		M	normal hearing, no reported symptoms
+SYNTH10_mother	HP:0000370	0		F	normal hearing, no reported symptoms
+SYNTH11_proband	HP:0000407;HP:0008619	1	12.3	M	bilateral hearing loss, unknown onset
+SYNTH11_father	HP:0000377	0		M	unaffected
+SYNTH11_mother	HP:0008619	0		F	unaffected, obligate carrier suspected
+SYNTH12_proband	HP:0000365;HP:0008619	1	11.3	M	early-onset sensorineural hearing loss
+SYNTH12_father		0		M	normal hearing, no reported symptoms
+SYNTH12_mother		0		F	clinically unaffected
+SYNTH13_proband	HP:0000407;HP:0000365;HP:0000377	1	5.4	F	moderate-severe bilateral SNHL
+SYNTH13_father		0		M	normal hearing, no reported symptoms
+SYNTH13_mother		0		F	normal hearing, no reported symptoms
+SYNTH14_proband	HP:0000365;HP:0000407	1	13.0	M	congenital bilateral SNHL
+SYNTH14_father		0		M	unaffected
+SYNTH14_mother	HP:0000370	1	35.4	F	hearing aid user
+SYNTH15_proband	HP:0000407;HP:0000365;HP:0001751	1	4.1	F	moderate-severe bilateral SNHL
+SYNTH15_father	HP:0000411	0		M	unaffected
+SYNTH15_mother		0		F	unaffected, obligate carrier suspected
+SYNTH16_proband	HP:0000365;HP:0000407	1	14.1	F	profound bilateral hearing loss, cochlear implant candidate
+SYNTH16_father	HP:0001751	0		M	normal hearing, no reported symptoms
+SYNTH16_mother	HP:0000365	0		F	unaffected
