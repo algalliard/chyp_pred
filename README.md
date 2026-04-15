@@ -37,7 +37,11 @@ Key dependencies: `pandas`, `scikit-learn`, `xgboost`, `lightgbm`,
 │   ├── 02_trio_assembly.ipynb  ← TrioLoader demo & trio statistics
 │   ├── 03_feature_engineering.ipynb ← build and inspect feature matrix
 │   ├── 04_modelling.ipynb      ← train / compare / save best model
-│   └── 05_evaluation.ipynb     ← ROC, SHAP, confusion matrix, per-inheritance breakdown
+│   ├── 05_evaluation.ipynb     ← ROC, SHAP, confusion matrix, per-inheritance breakdown
+│   ├── 06_vus_dataset_and_features.ipynb ← trusted labels vs VUS + enrichment features
+│   ├── 07_vus_model_training.ipynb       ← train VUS ranker on trusted labels only
+│   ├── 08_vus_prioritization.ipynb       ← score and rank VUS candidates
+│   └── 09_trio_clustering_and_enrichment.ipynb ← trio-level unsupervised clusters + enrichment
 ├── tests/                      ← pytest unit tests (108 tests total)
 ├── generate_synthetic.py       ← generate synthetic eVAI trio CSVs for testing
 ├── data/
@@ -124,6 +128,36 @@ printf "YOURPATIENT_mother\t\t0\t\tF\tunknown\n"  >> data/phenotypes.tsv
 
 # 4. Re-run notebooks 01 → 05
 ```
+
+---
+
+## VUS Prioritization Workflow
+
+When your goal is to rank uncertain variants (instead of standard pathogenic vs non-pathogenic classification), run:
+
+```bash
+# Prerequisite: run notebooks 01 -> 05 once to ensure assembled/features artifacts exist
+
+# VUS workflow
+06_vus_dataset_and_features.ipynb
+07_vus_model_training.ipynb
+08_vus_prioritization.ipynb
+09_trio_clustering_and_enrichment.ipynb
+```
+
+Outputs produced:
+- `data/vus_trusted_X.parquet`, `data/vus_trusted_y.csv`, `data/vus_trusted_groups.csv`
+- `data/vus_unlabeled_X.parquet`, `data/vus_unlabeled_meta.csv`
+- `models/vus_ranker.joblib`
+- `data/vus_priority_ranking.csv`
+- `reports/vus_top10_per_trio.csv`, `reports/vus_top5_per_gene.csv`
+- `reports/trio_cluster_assignments.csv`, `reports/trio_embedding_pca.csv`
+- `reports/cluster_gene_enrichment.csv`, `reports/cluster_hpo_enrichment.csv`
+
+Training labels in this workflow:
+- Positive: `Pathogenic`, `Likely pathogenic`
+- Negative: `Benign`, `Likely benign`
+- Unlabeled ranking target: `Uncertain significance`
 
 ---
 

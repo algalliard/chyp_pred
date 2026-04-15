@@ -1,0 +1,12 @@
+trio_id	proband	father	mother	phenotype_group
+T01	CHYP19_proband	CHYP21_father	CHYP20_mother	hearing_loss
+T03	CHYP30_proband	CHYP32_father	CHYP31_mother	hearing_loss
+T04	CHYP42_proband	CHYP44_father	CHYP43_mother	hearing_loss
+T05	CHYP50_proband	CHYP47_father	CHYP46_mother	hearing_loss
+T06	CHYP64_proband	CHYP67_father	CHYP66_mother	hearing_loss
+T07	CHYP52_proband	CHYP55_father	CHYP54_mother	hearing_loss
+T08	CHYP56_proband	CHYP59_father	CHYP58_mother	hearing_loss
+T09	CHYP6_proband	CHYP9_father	CHYP8_mother	hearing_loss
+T10	CHYP16_proband	CHYP18_father	CHYP17_mother	hearing_loss
+T11	CHYP34_proband	CHYP36_father	CHYP35_mother	hearing_loss
+T12	CHYP38_proband	CHYP41_father	CHYP40_mother	hearing_loss

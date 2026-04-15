@@ -1,0 +1,11 @@
+{
+  "model": "RandomForestClassifier (single-class fallback)",
+  "n_rows": 50,
+  "n_features": 38,
+  "n_groups": 14,
+  "cv_splits": 5,
+  "positive_rate": 1.0,
+  "roc_auc_oof": null,
+  "average_precision_oof": null,
+  "brier_oof": 0.0
+}
