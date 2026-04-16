@@ -28,6 +28,8 @@ model_results.csv
 input_eda.ipynb
 synthetic_classification.ipynb
 desktop.ini
+trios.tsv
+phenotypes.tsv
 
 # ─── Python cache ────────────────────────────────────────────────────────────
 __pycache__/
